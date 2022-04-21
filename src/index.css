@@ -12,6 +12,15 @@ code {
     monospace;
 }
 
+button {
+  cursor: pointer;
+}
+
+button:hover {
+    transition-duration: .1s;
+    transform: scale(1.10);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
