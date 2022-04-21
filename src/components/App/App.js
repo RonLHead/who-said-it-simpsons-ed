@@ -24,11 +24,7 @@ class App extends Component {
           <h2>D'oh: {this.state.doh}</h2>
           <h2>Fav Quotes</h2>
         </nav>
-        <section>
-          <p>Quote goes here</p>
-          <p>Button goes here</p>
-          <p>Img goes here</p>
-        </section>
+        <Quote />
       </main>
     );
   }

@@ -1,0 +1,62 @@
+.quote-body {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote {
+    box-shadow: 3px 3px 8px #808080;
+    border-radius: 10px;
+    background-color: white;
+    color: #743A34;
+    text-align: left;
+}
+
+.quote-button {
+    background-color: #FEC47A;
+    border: 4px solid #EB9426;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 40em) {
+    .quote {
+        width: 85%;
+        margin-top: 10%;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        padding-left: 7%;
+        padding-right: 5%;
+        margin-bottom: 5%;
+        margin-left: 3%;
+        margin-right: 3%;
+      }
+    .quote-font {
+        font-size: 20px;
+    }
+    .quote-button {
+          margin-top: 5%;
+    }
+    .simpsons-family {
+        width: 68vw;
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 51em) {
+
+    .quote-font {
+      font-size: 35px;
+    }
+    button {
+     font-size: 40px;
+     width: 45%;
+    }
+    .simpsons-family {
+     width: 36%;
+     margin-top: 1%;
+     margin-bottom: 1%;
+   }
+    
+   }

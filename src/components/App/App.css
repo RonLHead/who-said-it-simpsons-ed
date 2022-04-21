@@ -52,22 +52,11 @@ h2 {
   h2 {
     font-size: 17px;
   }
-  .quote {
-    width: 80%;
-    margin-top: 6%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    padding-left: 7%;
-    padding-right: 5%;
-    margin-bottom: 5%;
-  }
+ 
   button {
     font-size: 20px;
     width: 61%;
     padding: 2%;
   }
-  .simpsons-family {
-    width: 50%;
-    margin-top: 3%;
-  }
+  
 }
