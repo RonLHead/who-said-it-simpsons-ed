@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import getSimpsonsData from '../../apiCalls';
+import { NavLink } from 'react-router-dom';
 import './Game.css';
 
 const Game = () => {
@@ -19,7 +20,7 @@ const Game = () => {
     
     let gamePlay;
     
-    if(game === false) {
+    if(!game) {
         gamePlay = (
             <section className='quote-body'>
                 <div className='quote'>
@@ -31,9 +32,10 @@ const Game = () => {
                 </button>
                 <img className='simpsons-family' alt='Simpsons-family' src='pnghost_simpson-family-bankgrap-the-simpsons-opening-sequence-homer-the-great-television.png' />
             </section>
-        )} else if(game === true) {
-            gamePlay = (
-                <section className='quote-body'>
+        )
+    } else if(game) {
+        gamePlay = (
+            <section className='quote-body'>
                 <div className='quote'>
                     <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
                 </div>
@@ -43,12 +45,15 @@ const Game = () => {
                 <img className='simpsons-family' alt='Simpsons-character' src={round.image} />
                 <p>Is this who you guessed?</p>
                 <div>
-                    <button>Woohoo!</button>
-                    <button>D'oh!</button>zzzzzz
+                    <NavLink to='/Woohoo'>
+                        <button>Woohoo!</button>
+                    </NavLink>
+                    <button>D'oh!</button>
                 </div>
             </section>
-            )
-        }
+        )
+    }
+            
 
     return (
         <section>
