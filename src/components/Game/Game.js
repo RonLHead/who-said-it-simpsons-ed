@@ -48,8 +48,9 @@ const Game = () => {
                     <NavLink to='/woohoo'>
                         <button>Woohoo!</button>
                     </NavLink>         
-                    
-                    <button>D'oh!</button>
+                    <NavLink to='/doh'>
+                        <button>D'oh!</button>
+                    </NavLink>
                 </div>
             </section>
         )
