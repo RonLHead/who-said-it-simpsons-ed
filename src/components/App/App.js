@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Game from '../Game/Game';
 import FavoriteQuotes from '../FavoriteQuotes/FavoriteQuotes';
 import Woohoo from '../../Woohoo/Woohoo';
@@ -10,9 +10,12 @@ const App = () => {
   const [dohScore, setDohScore] = useState(0);
   const [favQuotes, setFavQuotes] = useState('');
 
-  const location = useLocation()
-  console.log(location.pathname)
-  
+  const location = useLocation();
+
+  const updateWoohooScore = () => {
+    setWoohooScore(woohooScore + 1)
+  }
+
   return (
     <main className="App">
       <header>
@@ -40,7 +43,7 @@ const App = () => {
           <FavoriteQuotes />
         </Route>
         <Route exact path='/woohoo'>
-          <Woohoo />
+          <Woohoo updateWoohooScore={updateWoohooScore}/>
         </Route>
       </Switch>
     </main>
