@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Quote from '../Quote/Quote';
 import FavoriteQuotes from '../FavoriteQuotes/FavoriteQuotes';
+import Character from '../Character/Character';
 import { NavLink, Route, Redirect, useLocation } from 'react-router-dom';
 import './App.css';
 
@@ -37,6 +38,9 @@ const App = () => {
       </Route>
       <Route exact path='/favorite-quotes'>
         <FavoriteQuotes />
+      </Route>
+      <Route exact path='/character'>
+        <Character />
       </Route>
     </main>
   );
