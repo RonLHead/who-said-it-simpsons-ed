@@ -23,6 +23,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+  
 }
 
 h1 {
@@ -32,9 +33,6 @@ h1 {
 
 h2 {
   color: white;
-  margin-left: 1%;
-  margin-right: 1%;
-  margin-bottom: 0%;
 }
 
 /* responsive mobile view */
@@ -59,4 +57,8 @@ h2 {
     padding: 2%;
   }
   
+  .navbar {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
 }
