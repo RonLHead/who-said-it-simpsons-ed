@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Quote from '../Quote/Quote';
+import Game from '../Game/Game';
 import FavoriteQuotes from '../FavoriteQuotes/FavoriteQuotes';
 import { NavLink, Route, Redirect, useLocation } from 'react-router-dom';
 import './App.css';
@@ -32,7 +32,7 @@ const App = () => {
       </nav>
       <Redirect exact from='/' to='/home' />
       <Route exact path='/home'>
-        <Quote />
+        <Game />
       </Route>
       <Route exact path='/favorite-quotes'>
         <FavoriteQuotes />
