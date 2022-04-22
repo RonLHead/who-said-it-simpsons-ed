@@ -6,8 +6,6 @@ import './Game.css';
 const Game = () => {
     const [round, setRound] = useState('');
     const [game, setGame] = useState(false);
-    let [woohoo, setWoohoo] = useState(false);
-    const [woohooCount, setWoohooCount] = useState(0);
 
     useEffect(() => {
         loadRound()
@@ -22,7 +20,7 @@ const Game = () => {
 
     let gamePlay;
     
-    if(!game && !woohoo) {
+    if(!game) {
         gamePlay = (
             <section className='quote-body'>
                 <div className='quote'>
@@ -35,7 +33,7 @@ const Game = () => {
                 <img className='simpsons-family' alt='Simpsons-family' src='pnghost_simpson-family-bankgrap-the-simpsons-opening-sequence-homer-the-great-television.png' />
             </section>
         )
-    } else if(game && !woohoo) {
+    } else if(game) {
         gamePlay = (
             <section className='quote-body'>
                 <div className='quote'>
@@ -48,7 +46,7 @@ const Game = () => {
                 <p>Is this who you guessed?</p>
                 <div>
                     <NavLink to='/woohoo'>
-                        <button onClick={()=>{setWoohoo(true)}}>Woohoo!</button>
+                        <button>Woohoo!</button>
                     </NavLink>         
                     
                     <button>D'oh!</button>
