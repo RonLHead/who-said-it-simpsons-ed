@@ -23,6 +23,11 @@ const App = () => {
     console.log(favQuotes)
   }, [favQuotes])
 
+  const deleteQuote = (quote) => {
+    const filteredQuotes = favQuotes.filter(saying => saying != quote)
+    setFavQuotes(filteredQuotes)
+  }
+
   const location = useLocation();
 
   const updateWoohooScore = () => {
@@ -58,7 +63,7 @@ const App = () => {
           <Game addFavQuotes={addFavQuotes}/>
         </Route>
         <Route exact path='/favorite-quotes'>
-          <FavoriteQuotes favQuotes={favQuotes}/>
+          <FavoriteQuotes favQuotes={favQuotes} deleteQuote={deleteQuote}/>
         </Route>
         <Route exact path='/woohoo'>
           <Woohoo updateWoohooScore={updateWoohooScore}/>

@@ -23,15 +23,14 @@ const Game = (props) => {
             })
     }
 
+    
+
     let gamePlay;
     
     if(!game) {
         gamePlay = (
             <section className='quote-body'>
                 <div className='quote'>
-                    <button onClick={()=>{
-                        props.addFavQuotes(round.quote)
-                    }}>Add to favorites</button>
                     <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
                 </div>
                 <button className='quote-button' onClick={()=>{setGame(true)}}>
@@ -45,6 +44,9 @@ const Game = (props) => {
         gamePlay = (
             <section className='quote-body'>
                 <div className='quote'>
+                    <button onClick={()=>{
+                        props.addFavQuotes(round.quote)
+                    }}>Add to favorites</button>
                     <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
                 </div>
                 <div>
