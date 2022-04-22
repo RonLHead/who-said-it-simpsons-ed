@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Game from '../Game/Game';
 import FavoriteQuotes from '../FavoriteQuotes/FavoriteQuotes';
-import { NavLink, Route, Redirect, useLocation } from 'react-router-dom';
+import Woohoo from '../../Woohoo/Woohoo';
+import { Switch, NavLink, Route, Redirect, useLocation } from 'react-router-dom';
 import './App.css';
 
 const App = () => {
-  const [woohoo, setWoohoo] = useState(0);
-  const [doh, setDoh] = useState(0);
+  const [woohooScore, setWoohooScore] = useState(0);
+  const [dohScore, setDohScore] = useState(0);
   const [favQuotes, setFavQuotes] = useState('');
 
   const location = useLocation()
@@ -19,8 +20,8 @@ const App = () => {
         <img className='App-logo' alt='simpsons-logo' src='pnghost_bart-simpson-marge-simpson-logo-simpsons.png'/>
       </header>
       <nav className='navbar'>
-        <h2>Woohoo: {woohoo}</h2>
-        <h2>D'oh: {doh}</h2>
+        <h2>Woohoo: {woohooScore}</h2>
+        <h2>D'oh: {dohScore}</h2>
         {location.pathname === '/favorite-quotes'
            ? (<NavLink to='/home' style={{textDecoration: 'none'}}>
               <h2>Home</h2>
@@ -30,13 +31,18 @@ const App = () => {
           </NavLink>)
         }
       </nav>
-      <Redirect exact from='/' to='/home' />
-      <Route exact path='/home'>
-        <Game />
-      </Route>
-      <Route exact path='/favorite-quotes'>
-        <FavoriteQuotes />
-      </Route>
+      <Switch>
+        <Redirect exact from='/' to='/home' />
+        <Route exact path='/home'>
+          <Game />
+        </Route>
+        <Route exact path='/favorite-quotes'>
+          <FavoriteQuotes />
+        </Route>
+        <Route exact path='/woohoo'>
+          <Woohoo />
+        </Route>
+      </Switch>
     </main>
   );
 }
