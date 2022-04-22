@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import getSimpsonsData from '../../apiCalls';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as heartOutline, faCircleCheck as checkedIcon } from '@fortawesome/free-regular-svg-icons';
 import './Game.css';
 
 const Game = (props) => {
     const [round, setRound] = useState('');
     const [game, setGame] = useState(false);
-    // const [favQuotes, setFavQuotes] = useState([]);
-    
-    // const addFavQuotes = (newQuote) => {
-    // setFavQuotes([...favQuotes, newQuote])
-    //  }
+    const [favorite, setFavorite] = useState(false);
 
     useEffect(() => {
         loadRound()
@@ -25,14 +23,42 @@ const Game = (props) => {
 
     
 
+    let displayQuote;
+    
+    if(!favorite) {
+        displayQuote = 
+            <div className='quote'>
+                <div className='top-corner'>
+                    <FontAwesomeIcon  icon={heartOutline} onClick={()=>{
+                        props.addFavQuotes(round.quote)
+                        setFavorite(true)
+                        console.log(favorite)
+                    }}/>                   
+                </div>
+                <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
+            </div>
+            
+        } else {
+        displayQuote = 
+            <div className='quote'>
+                <div className='top-corner'>
+                    <FontAwesomeIcon icon={checkedIcon}/>
+                </div>
+                <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
+            </div>
+            
+
+        }
+
+
+    
+
     let gamePlay;
     
     if(!game) {
         gamePlay = (
             <section className='quote-body'>
-                <div className='quote'>
-                    <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
-                </div>
+                {displayQuote}
                 <button className='quote-button' onClick={()=>{setGame(true)}}>
                     <p>Click when you know</p>
                     <p><em>Who Said It</em></p>
@@ -43,12 +69,7 @@ const Game = (props) => {
     } else if(game) {
         gamePlay = (
             <section className='quote-body'>
-                <div className='quote'>
-                    <button onClick={()=>{
-                        props.addFavQuotes(round.quote)
-                    }}>Add to favorites</button>
-                    <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
-                </div>
+                {displayQuote}
                 <div>
                     <p>{!round ? 'Loading...' : `It was ${round.character}!`}</p>
                 </div>
