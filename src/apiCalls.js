@@ -1,4 +1,4 @@
-const getSimpsonsQuote = () => {
+const getSimpsonsData = () => {
     const fetchCall = fetch('https://thesimpsonsquoteapi.glitch.me/quotes')
         .then(response => {
             if(response.status === 404) {
@@ -11,4 +11,4 @@ const getSimpsonsQuote = () => {
         return fetchCall;
 }
 
-export default getSimpsonsQuote;
+export default getSimpsonsData;
