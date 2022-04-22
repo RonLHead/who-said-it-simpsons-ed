@@ -12,7 +12,6 @@ const App = () => {
   const location = useLocation()
   console.log(location.pathname)
   
-  // let button = {home} ? <NavLink to='/home'><h2 className='fav-quotes'>Fav Quotes</h2></NavLink> : <NavLink to='/favorite-quotes'><h2 className='fav-quotes'>Home</h2></NavLink>;
   return (
     <main className="App">
       <header>
