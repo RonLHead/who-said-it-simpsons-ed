@@ -3,9 +3,14 @@ import getSimpsonsData from '../../apiCalls';
 import { NavLink } from 'react-router-dom';
 import './Game.css';
 
-const Game = () => {
+const Game = (props) => {
     const [round, setRound] = useState('');
     const [game, setGame] = useState(false);
+    // const [favQuotes, setFavQuotes] = useState([]);
+    
+    // const addFavQuotes = (newQuote) => {
+    // setFavQuotes([...favQuotes, newQuote])
+    //  }
 
     useEffect(() => {
         loadRound()
@@ -24,6 +29,9 @@ const Game = () => {
         gamePlay = (
             <section className='quote-body'>
                 <div className='quote'>
+                    <button onClick={()=>{
+                        props.addFavQuotes(round.quote)
+                    }}>Add to favorites</button>
                     <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
                 </div>
                 <button className='quote-button' onClick={()=>{setGame(true)}}>

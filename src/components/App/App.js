@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Game from '../Game/Game';
 import FavoriteQuotes from '../FavoriteQuotes/FavoriteQuotes';
 import Woohoo from '../../Woohoo/Woohoo';
@@ -9,7 +9,19 @@ import './App.css';
 const App = () => {
   const [woohooScore, setWoohooScore] = useState(0);
   const [dohScore, setDohScore] = useState(0);
-  const [favQuotes, setFavQuotes] = useState('');
+  const [favQuotes, setFavQuotes] = useState([]);
+
+  const addFavQuotes = (newQuote) => {
+      if(!favQuotes.find(quote => quote === newQuote)) {
+        setFavQuotes([
+          ...favQuotes, newQuote
+        ])
+      } 
+  }
+
+  useEffect(() => {
+    console.log(favQuotes)
+  }, [favQuotes])
 
   const location = useLocation();
 
@@ -20,6 +32,7 @@ const App = () => {
   const updateDohScore = () => {
     setDohScore(dohScore + 1);
   }
+
 
   return (
     <main className="App">
@@ -42,10 +55,10 @@ const App = () => {
       <Switch>
         <Redirect exact from='/' to='/home' />
         <Route exact path='/home'>
-          <Game />
+          <Game addFavQuotes={addFavQuotes}/>
         </Route>
         <Route exact path='/favorite-quotes'>
-          <FavoriteQuotes />
+          <FavoriteQuotes favQuotes={favQuotes}/>
         </Route>
         <Route exact path='/woohoo'>
           <Woohoo updateWoohooScore={updateWoohooScore}/>
