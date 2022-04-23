@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Game from '../Game/Game';
 import FavoriteQuotes from '../FavoriteQuotes/FavoriteQuotes';
-import Woohoo from '../../Woohoo/Woohoo';
+import Woohoo from '../Woohoo/Woohoo';
 import Doh from '../Doh/Doh';
 import { Switch, NavLink, Route, Redirect, useLocation } from 'react-router-dom';
 import './App.css';
