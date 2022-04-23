@@ -21,17 +21,37 @@
     font-weight: bold;
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 50.938em) {
     .doh-heading {
         font-size: 25px;
         width: 42vw;
         height: 11vh;
-        /* margin-top: 10%; */
     }
     .play-again-container {
         width: 65vw;
         height: 15vh;
         font-size: 45px;
         margin-bottom: 50%;
+    }
+}
+
+@media screen and (min-width: 50.940em) {
+    .doh-container {
+        border-radius: 15px;
+        background-color: #FFFFFF;
+        width: 90%;
+        margin-top: 2%;
+    }
+    .doh-heading {
+        margin: none;
+        width: 30vw;
+        height:20vh;
+        font-size: 45px;
+    }
+    .play-again-container {
+        width: 40vw;
+        height: 18vh;
+        font-size: 60px;
+        border: 15px solid #EB9426;
     }
 }
