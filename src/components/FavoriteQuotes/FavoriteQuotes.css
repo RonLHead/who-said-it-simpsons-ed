@@ -1,0 +1,16 @@
+.fav-quotes-heading {
+    color: #C05C31;
+}
+
+.fav-quotes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (max-width: 40em) {
+    .fav-quotes-heading {
+        font-size: 40px;
+        font-stretch:ultra-condensed;
+    }
+}
