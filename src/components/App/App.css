@@ -36,7 +36,7 @@ h2 {
   color: white;
 }
 
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 50.938em) {
   .App-logo {
     width: 48%;
     margin-bottom: 0%;
@@ -63,17 +63,21 @@ h2 {
   }
 }
 
-@media screen and (min-width: 51em) {
+@media screen and (min-width: 50.940em) {
   .App-logo {
-    width: 18%;
+    width: 15%;
   }
   .App-title {
-    font-size: 70px;
+    font-size: 60px;
   }
   body {
     background-color: #FFB696;
   }
   h2 {
-    font-size: 28px;
+    font-size: 25px;
+  }
+  .navbar {
+    padding-left: 1%;
+    padding-right: 1%;
   }
 }
