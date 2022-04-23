@@ -41,8 +41,8 @@ const App = () => {
 
   return (
     <main className="App">
-      <header>
-        <h1>Who Said It?</h1>
+      <header className='App-header'>
+        <h1 className='App-title'>Who Said It?</h1>
         <img className='App-logo' alt='simpsons-logo' src='pnghost_bart-simpson-marge-simpson-logo-simpsons.png'/>
       </header>
       <nav className='navbar'>
