@@ -9,7 +9,8 @@ main {
   text-align: center;
 }
 
-header {
+.App-header {
+  width: 100vw;
   background: #F5EEE5;
   display: flex;
   flex-direction: column;
@@ -26,7 +27,7 @@ nav {
   
 }
 
-h1 {
+.App-title {
   color: #FFA5BC;
   font-style: italic;
 }
@@ -35,16 +36,15 @@ h2 {
   color: white;
 }
 
-/* responsive mobile view */
-@media screen and (max-width: 40em) {
+@media screen and (max-width: 50.938em) {
   .App-logo {
     width: 48%;
     margin-bottom: 0%;
   }
-  main {
+  body {
     background-color: #FFFAFA;
   }
-  h1 {
+  .App-title {
     font-size: 48px;
   }
   h2 {
@@ -57,6 +57,25 @@ h2 {
     padding: 2%;
   }
   
+  .navbar {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+}
+
+@media screen and (min-width: 50.940em) {
+  .App-logo {
+    width: 15%;
+  }
+  .App-title {
+    font-size: 60px;
+  }
+  body {
+    background-color: #FFB696;
+  }
+  h2 {
+    font-size: 25px;
+  }
   .navbar {
     padding-left: 1%;
     padding-right: 1%;

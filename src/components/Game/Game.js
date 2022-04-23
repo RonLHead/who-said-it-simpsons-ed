@@ -29,7 +29,7 @@ const Game = (props) => {
         displayQuote = 
             <div className='quote'>
                 <div className='top-corner'>
-                    <FontAwesomeIcon  icon={heartOutline} onClick={()=>{
+                    <FontAwesomeIcon  icon={heartOutline} size='lg' onClick={()=>{
                         props.addFavQuotes(round.quote)
                         setFavorite(true)
                         console.log(favorite)
@@ -42,7 +42,7 @@ const Game = (props) => {
         displayQuote = 
             <div className='quote'>
                 <div className='top-corner'>
-                    <FontAwesomeIcon icon={checkedIcon}/>
+                    <FontAwesomeIcon icon={checkedIcon} size='lg'/>
                 </div>
                 <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
             </div>
@@ -70,17 +70,17 @@ const Game = (props) => {
         gamePlay = (
             <section className='quote-body'>
                 {displayQuote}
-                <div>
-                    <p>{!round ? 'Loading...' : `It was ${round.character}!`}</p>
+                <div className='character-name'>
+                    <p>{!round ? 'Loading...' : `It's ${round.character}!`}</p>
                 </div>
-                <img className='simpsons-family' alt='Simpsons-character' src={round.image} />
-                <p>Is this who you guessed?</p>
-                <div>
+                <img className='simpsons-character' alt='Simpsons-character' src={round.image} />
+                <p className='guess'>Is this who you guessed?</p>
+                <div className='game-choice'>
                     <NavLink to='/woohoo'>
-                        <button>Woohoo!</button>
+                        <button className='woohoo-button'>Woohoo!</button>
                     </NavLink>         
                     <NavLink to='/doh'>
-                        <button>D'oh!</button>
+                        <button className='doh-button'>D'oh!</button>
                     </NavLink>
                 </div>
             </section>
@@ -88,7 +88,7 @@ const Game = (props) => {
     }        
 
     return (
-        <section>
+        <section className='body-container'>
             {gamePlay}
         </section>
         

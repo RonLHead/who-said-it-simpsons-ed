@@ -1,13 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Woohoo.css';
 
 const Woohoo = (props) => {
     return (
-        <section>
-            <h3>Woohoo!</h3>
-            <h4>+1</h4>
+        <section className='woohoo-container'>
+            <div className='woohoo-heading'>
+                <h3>Woohoo!</h3>
+                <h3>+1</h3>
+            </div>
             <NavLink to='/home'>
-                <button onClick={()=>{
+                <button className='play-again-container' onClick={()=>{
                     props.updateWoohooScore();
                 }}>Play again!</button>
             </NavLink>

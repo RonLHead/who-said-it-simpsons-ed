@@ -1,13 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Doh.css';
 
 const Doh = (props) => {
     return (
-        <section>
-            <h3>D'oh!</h3>
-            <h4>+1</h4>
+        <section className='doh-container'>
+            <div className='doh-heading'>
+                <h3>D'oh!</h3>
+                <h3>+1</h3>
+            </div>
             <NavLink to='/home'>
-                <button onClick={()=>{
+                <button className='play-again-container' onClick={()=>{
                     props.updateDohScore();
                 }}>Play again!</button>
             </NavLink>

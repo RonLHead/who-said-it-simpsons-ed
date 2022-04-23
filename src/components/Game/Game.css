@@ -5,8 +5,11 @@
     align-items: center;
 }
 
-.quote {
+.quote, .character-name {
     box-shadow: 3px 3px 8px #808080;
+}
+
+.quote {
     border-radius: 10px;
     background-color: white;
     color: #743A34;
@@ -25,10 +28,48 @@
     flex-direction: row-reverse;
 }
 
-@media screen and (max-width: 40em) {
+.top-corner:hover {
+    cursor: pointer;
+}
+
+.character-name {
+    border-radius: 10px;
+    background-color: #FFA5BC;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+}
+.guess {
+    color: #C05C31;
+    padding-bottom: 2%;
+}
+
+.game-choice {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 4%;
+}
+
+.woohoo-button {
+    background-color: #00AA8B;
+    border: 4px solid #058C74;
+    color: white;
+    font-weight: bold;
+}
+
+.doh-button {
+    background-color: #E15F75;
+    border: 4px solid #8A091F;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 50.938em) {
     .quote {
         width: 85%;
-        margin-top: 10%;
+        margin-top: 5%;
         padding-top: 3%;
         padding-bottom: 3%;
         padding-left: 7%;
@@ -37,7 +78,7 @@
         margin-left: 3%;
         margin-right: 3%;
       }
-    .quote-font {
+    .quote-font, .character-name {
         font-size: 20px;
     }
     .quote-button {
@@ -48,21 +89,85 @@
         width: 60vw;
         margin-top: 5%;
     }
+    .simpsons-character {
+        width: 40vw;
+        margin-top: 6%;
+    }
+    .guess {
+        font-size: 28px;
+        width: 60%;
+    }
+    .character-name {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-right: 8%;
+        padding-left: 8%;
+    }
+    .woohoo-button, .doh-button {
+        width: 30vw;
+    }
 }
 
-@media screen and (min-width: 51em) {
-
-    .quote-font {
-      font-size: 35px;
+@media screen and (min-width: 50.940em) {
+    .body-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+        width: 90%;
+        margin-top: 2%;
     }
-    button {
-     font-size: 40px;
-     width: 45%;
+    .quote {
+        width: 70%;
+        margin-top: 2%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 3%;
+        padding-right: 2%;
+        margin-bottom: 3%;
+    }
+    .quote-font, .character-name {
+        font-size: 25px;
+    }
+    .quote-button {
+        width: 30vw;
+        font-size: 26px;
+        margin-bottom: 1%;
+        border: 8px solid #EB9426;
     }
     .simpsons-family {
-     width: 36%;
-     margin-top: 1%;
-     margin-bottom: 1%;
-   }
-    
+        width: 30%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    .character-name {
+        font-size: 28px;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+    .simpsons-character {
+        width: 18vw;
+        margin-top: 1%;
+    }
+    .guess {
+        font-size: 40px;
+        /* width: 80%; */
+    }
+    .woohoo-button, .doh-button {
+        width: 15vw;
+        height: 10vh;
+        font-size: 30px;
+    }
+    .woohoo-button {
+        border: 8px solid #058C74;
+    }
+    .doh-button {
+        border: 8px solid #8A091F;
+    }
+    .game-choice {
+        justify-content: space-evenly;
+    }
    }
