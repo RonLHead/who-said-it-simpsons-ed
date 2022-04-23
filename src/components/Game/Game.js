@@ -88,7 +88,7 @@ const Game = (props) => {
     }        
 
     return (
-        <section>
+        <section className='body-container'>
             {gamePlay}
         </section>
         
