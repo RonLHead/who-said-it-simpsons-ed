@@ -1,0 +1,35 @@
+.woohoo-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:space-evenly;
+}
+
+.woohoo-heading {
+    background-color: #00AA8B;
+    border: 4px solid #058C74;
+    color: white;
+    font-weight: bold;
+}
+
+.play-again-container {
+    background-color: #FEC47A;
+    border: 4px solid #EB9426;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 40em) {
+    .woohoo-heading {
+        font-size: 25px;
+        width: 42vw;
+        height: 11vh;
+    }
+    .play-again-container {
+        width: 65vw;
+        height: 15vh;
+        font-size: 45px;
+        margin-bottom: 50%;
+    }
+}
