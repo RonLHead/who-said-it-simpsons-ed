@@ -2,7 +2,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 100%;
 }
 
 .App {
@@ -70,16 +70,16 @@ h2 {
 
 @media screen and (min-width: 50.940em) {
   .App-logo {
-    width: 15%;
+    width: 13%;
   }
   .App-title {
-    font-size: 60px;
+    font-size: 40px;
   }
   body {
     background-color: #FFB696;
   }
   h2 {
-    font-size: 25px;
+    font-size: 18 px;
   }
   .navbar {
     padding-left: 1%;
