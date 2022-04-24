@@ -14,6 +14,15 @@ const simpsonsQuoteTest1 = [
       "image": "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FChiefWiggum.png?1497567511716",
       "characterDirection": "Left"
     }
-  ]
+];
 
-export default { simpsonsQuoteTest, simpsonsQuoteTest1};
+const simpsonsQuoteTest2 = [
+    {
+      "quote": "I live in a single room above a bowling alley...and below another bowling alley.",
+      "character": "Frank Grimes",
+      "image": "https://cdn.glitch.com/3c3ffadc-3406-4440-bb95-d40ec8fcde72%2FFrankGrimes.png?1497567511887",
+      "characterDirection": "Left"
+    }
+];
+
+export default { simpsonsQuoteTest, simpsonsQuoteTest1, simpsonsQuoteTest2};
