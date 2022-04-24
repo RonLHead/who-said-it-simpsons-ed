@@ -12,7 +12,7 @@ const App = () => {
   const [favQuotes, setFavQuotes] = useState([]);
 
   const addFavQuotes = (newQuote) => {
-      if(!favQuotes.find(quote => quote === newQuote)) {
+      if(newQuote && !favQuotes.find(quote => quote === newQuote)) {
         setFavQuotes([
           ...favQuotes, newQuote
         ])
@@ -37,7 +37,6 @@ const App = () => {
   const updateDohScore = () => {
     setDohScore(dohScore + 1);
   }
-
 
   return (
     <main className="App">
