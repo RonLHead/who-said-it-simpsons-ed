@@ -28,8 +28,10 @@
     flex-direction: row-reverse;
 }
 
-.top-corner:hover {
+.heart:hover {
     cursor: pointer;
+    transition-duration: .1s;
+    transform: scale(1.10);
 }
 
 .character-name {
