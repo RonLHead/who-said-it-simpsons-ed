@@ -11,6 +11,11 @@
     align-items: center;
 }
 
+.no-quotes-font {
+    color: #743A34;
+    text-align: center;
+}
+
 @media screen and (max-width: 50.938em) {
     .fav-quotes-container {
         margin-top: 1%;
@@ -18,6 +23,9 @@
     .fav-quotes-heading {
         font-size: 40px;
         font-stretch:ultra-condensed;
+    }
+    .no-quotes-font {
+        font-size: 20px;
     }
 }
 
@@ -28,5 +36,8 @@
     .fav-quotes-heading {
         font-size: 60px;
         font-stretch: ultra-condensed;
+    }
+    .no-quotes-font {
+        font-size: 28px;
     }
 }
