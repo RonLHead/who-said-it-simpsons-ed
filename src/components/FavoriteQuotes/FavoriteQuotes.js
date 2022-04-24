@@ -5,21 +5,26 @@ import './FavoriteQuotes.css';
 import '../Game/Game.css';
 
 const FavoriteQuotes = (props) => {
-    const favoriteQuotesSet = props.favQuotes.map((quote, i)=> {
-        return (
-            <section key={i} className='quote'>
-                <div className='top-corner'>
-                    <FontAwesomeIcon icon={deleteIcon} size='lg' onClick={()=>{
-                        props.deleteQuote(quote)}
-                        }/>
-                </div>
-                <p className='quote-font'>{quote}</p>
-            </section>
-        )
-    })
+    let favoriteQuotesSet;
+    if(props.favQuotes.length) {
+        favoriteQuotesSet = props.favQuotes.map((quote, i)=> {
+            return (
+                <section key={i} className='quote'>
+                    <div className='top-corner'>
+                        <FontAwesomeIcon icon={deleteIcon} size='lg' onClick={()=>{
+                            props.deleteQuote(quote)}
+                            }/>
+                    </div>
+                    <p className='quote-font'>{quote}</p>
+                </section>
+            )
+        })
+    } else {
+        favoriteQuotesSet = <p>No quotes...</p>
+    }
     return (
         <section className='fav-quotes-container'>
-            <h2 className='fav-quotes-heading'>Favorite Quotes</h2> 
+            <h2 className='fav-quotes-heading'>Favorite Quotes</h2>
             {favoriteQuotesSet}
         </section>
         
