@@ -1,7 +1,7 @@
 import simpsonsQuoteTest from './simpsonsQuoteData';
 
 describe('Home page flow', ()=> {
-    it('Should be able to visit the app and render the correct elements', () => {
+    it('Should be able to visit the app and render the correct elements with loading message', () => {
         cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', simpsonsQuoteTest)
         cy.visit('http://localhost:3000/home')
             .contains('Who Said It?')
@@ -21,15 +21,7 @@ describe('Home page flow', ()=> {
                 .get('div')
                     .should('have.class', 'top-corner')
                 .get('p')
-                    .contains("For once maybe someone will call me \"sir\" without adding, \"You're making a scene.\"")
-                .get('button')
-                    .should('have.class', 'quote-button')
-                .get('p')
-                    .contains('Click when you know')
-                .get('p')
-                    .contains('Who Said It')
-                .get('img')
-                    .should('have.class', 'simpsons-family')
+                    .contains('Loading...')               
     })
     it("Should be able to display a loading message if the movies data isn't fetched properly", () => {
         cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', {forceNetworkError: true})
@@ -47,5 +39,8 @@ describe('Home page flow', ()=> {
                 .get('section')
                     .should('have.class','quote-body')
                     .contains('Loading...')
+                .get('div')
+                    .should('have.class', 'error-msg')
+                    .contains("We're having technical difficulties...")
     })
 })

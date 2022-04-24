@@ -64,7 +64,7 @@ const Game = (props) => {
                 <img className='simpsons-family' alt='Simpsons-family' src='pnghost_simpson-family-bankgrap-the-simpsons-opening-sequence-homer-the-great-television.png' />
             </section>
         )
-    } else if(game && round) {
+    } else if(round && game) {
         gamePlay = (
             <section className='quote-body'>
                 {displayQuote}
