@@ -1,5 +1,5 @@
 .doh-container {
-    height: 100vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -40,18 +40,16 @@
         border-radius: 15px;
         background-color: #FFFFFF;
         width: 90%;
-        margin-top: 2%;
+        margin-top: 1%;
     }
     .doh-heading {
         margin: none;
-        width: 30vw;
-        height:20vh;
-        font-size: 45px;
+        width: 20vw;
+        font-size: 30px;
     }
     .play-again-container {
-        width: 40vw;
-        height: 18vh;
-        font-size: 60px;
+        width: 25vw;
+        font-size: 40px;
         border: 15px solid #EB9426;
     }
 }

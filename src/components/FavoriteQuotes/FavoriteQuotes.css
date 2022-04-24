@@ -3,27 +3,41 @@
 }
 
 .fav-quotes-container {
+    background-color: #FFFFFF;
+    width: 90%;
+    border-radius: 15px;      
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.no-quotes-font {
+    color: #743A34;
+    text-align: center;
+}
+
 @media screen and (max-width: 50.938em) {
+    .fav-quotes-container {
+        margin-top: 1%;
+    }
     .fav-quotes-heading {
         font-size: 40px;
         font-stretch:ultra-condensed;
+    }
+    .no-quotes-font {
+        font-size: 20px;
     }
 }
 
 @media screen and (min-width: 50.940em) {
     .fav-quotes-container {
-        border-radius: 15px;
-        background-color: #FFFFFF;
-        width: 90%;
         margin-top: 2%;
     }
     .fav-quotes-heading {
         font-size: 60px;
         font-stretch: ultra-condensed;
+    }
+    .no-quotes-font {
+        font-size: 28px;
     }
 }
