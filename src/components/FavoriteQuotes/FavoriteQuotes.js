@@ -20,7 +20,12 @@ const FavoriteQuotes = (props) => {
             )
         })
     } else {
-        favoriteQuotesSet = <p>No quotes...</p>
+        favoriteQuotesSet = (
+            <section className='quote'>
+                <p className='no-quotes-font'>No quotes to be found here...</p>
+                <p className='no-quotes-font'   >Why not go back and add some?</p>
+            </section>
+        )
     }
     return (
         <section className='fav-quotes-container'>
