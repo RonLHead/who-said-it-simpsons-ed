@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-.quote, .character-name {
+.quote, .character-name, .error-msg {
     box-shadow: 3px 3px 8px #808080;
 }
 
@@ -73,6 +73,8 @@
     background-color: #FFA5BC;
     color: white;
     font-weight: bold;
+    margin-bottom: 3%;
+    margin-top: 3%;
 }
 
 @media screen and (max-width: 50.938em) {
@@ -115,8 +117,7 @@
     .woohoo-button, .doh-button {
         width: 30vw;
     }
-    .error-msg {
-        margin-bottom: 3%;
+    .error-msg {    
         font-size: 25px;
         padding: 3%;
     }
@@ -185,7 +186,6 @@
         justify-content: space-evenly;
     }
     .error-msg {
-        margin-bottom: 3%;
         font-size: 30px;
         padding: 2%;
     }
