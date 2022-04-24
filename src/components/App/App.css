@@ -27,6 +27,11 @@ nav {
   
 }
 
+.home-button:hover, .fav-quotes-button:hover {
+    transition-duration: .1s;
+    transform: scale(1.10);
+}
+
 .App-title {
   color: #FFA5BC;
   font-style: italic;

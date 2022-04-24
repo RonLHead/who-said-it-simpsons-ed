@@ -50,10 +50,10 @@ const App = () => {
         <h2>D'oh: {dohScore}</h2>
         {location.pathname === '/favorite-quotes'
            ? (<NavLink to='/home' style={{textDecoration: 'none'}}>
-              <h2>Home</h2>
+              <h2 className='home-button'>Home</h2>
             </NavLink>)
           : (<NavLink to='/favorite-quotes' style={{textDecoration: 'none'}}>
-              <h2>Fav&nbsp;Quotes</h2>
+              <h2 className='fav-quotes-button'>Fav&nbsp;Quotes</h2>
           </NavLink>)
         }
       </nav>
