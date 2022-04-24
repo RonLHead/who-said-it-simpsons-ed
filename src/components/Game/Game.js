@@ -64,18 +64,7 @@ const Game = (props) => {
                 <img className='simpsons-family' alt='Simpsons-family' src='pnghost_simpson-family-bankgrap-the-simpsons-opening-sequence-homer-the-great-television.png' />
             </section>
         )
-    } else if(!round && !game) {
-        gamePlay = (
-            <section className='quote-body'>
-                {displayQuote}
-                {err && (
-                    <div className='error-msg'>
-                        <p>We're having technical difficulties...</p>
-                    </div>
-                )}
-            </section>
-        )
-    }  else if(game && !err) {
+    } else if(game && round) {
         gamePlay = (
             <section className='quote-body'>
                 {displayQuote}
@@ -94,13 +83,25 @@ const Game = (props) => {
                 </div>
             </section>
         )
-    }        
-
+    } else {
+        {err ? gamePlay=(
+            <section className='quote-body'>    
+                <div className='error-msg'>
+                    <p>We're having technical difficulties...</p>
+                </div>                                                                                                          
+            </section>
+        ) : gamePlay= (
+            <section className='quote-body'>
+                {displayQuote}
+            </section>
+        )
+     }  
+    }    
+    
     return (
         <section className='body-container'>
             {gamePlay}
-        </section>
-        
+        </section>       
     )
 }
 
