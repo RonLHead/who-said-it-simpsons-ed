@@ -9,6 +9,7 @@ const Game = (props) => {
     const [round, setRound] = useState('');
     const [game, setGame] = useState(false);
     const [favorite, setFavorite] = useState(false);
+    const [err, setErr] = useState('')
 
     useEffect(() => {
         loadRound()
@@ -19,13 +20,15 @@ const Game = (props) => {
             .then(data => {
                 return setRound(data[0])
             })
+            .catch(error => {
+                console.log("Error", error)
+                return setErr(error)
+              })
     }
 
+    let displayQuote;       
     
-
-    let displayQuote;
-    
-    if(!favorite) {
+    if(!favorite || !round) {
         displayQuote = 
             <div className='quote'>
                 <div className='top-corner'>
@@ -46,16 +49,11 @@ const Game = (props) => {
                 </div>
                 <p className='quote-font'>{!round ? 'Loading...' : round.quote}</p>
             </div>
-            
-
         }
-
-
-    
 
     let gamePlay;
     
-    if(!game) {
+    if(round && !game) {
         gamePlay = (
             <section className='quote-body'>
                 {displayQuote}
@@ -66,7 +64,18 @@ const Game = (props) => {
                 <img className='simpsons-family' alt='Simpsons-family' src='pnghost_simpson-family-bankgrap-the-simpsons-opening-sequence-homer-the-great-television.png' />
             </section>
         )
-    } else if(game) {
+    } else if(!round && !game) {
+        gamePlay = (
+            <section className='quote-body'>
+                {displayQuote}
+                {err && (
+                    <div className='error-msg'>
+                        <p>We're having technical difficulties...</p>
+                    </div>
+                )}
+            </section>
+        )
+    }  else if(game && !err) {
         gamePlay = (
             <section className='quote-body'>
                 {displayQuote}
