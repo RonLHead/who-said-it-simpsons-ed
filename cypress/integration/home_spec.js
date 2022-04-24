@@ -1,7 +1,7 @@
 import simpsonsQuoteTest from './simpsonsQuoteData';
 
 describe('Home page flow', ()=> {
-    it('Should be able to visist the app and render the correct elements', () => {
+    it('Should be able to visit the app and render the correct elements', () => {
         cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', simpsonsQuoteTest)
         cy.visit('http://localhost:3000/home')
             .contains('Who Said It?')
