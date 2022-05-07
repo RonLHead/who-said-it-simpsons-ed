@@ -1,9 +1,7 @@
-import simpsonsQuoteTest from './simpsonsQuoteData';
-
 describe('Home page flow', ()=> {
     it('Should be able to visit the app and render the correct elements with loading message', () => {
-        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', simpsonsQuoteTest)
-        cy.visit('http://localhost:3000/home')
+        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', { fixture: 'simpsonsQuoteTest.json'})
+        cy.visit('http://localhost:3000/')
             .contains('Who Said It?')
                 .get('img')
                     .should('have.class', 'App-logo')
@@ -25,7 +23,7 @@ describe('Home page flow', ()=> {
     })
     it("Should be able to display a loading message if the movies data isn't fetched properly", () => {
         cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', {forceNetworkError: true})
-        cy.visit('http://localhost:3000/home')
+        cy.visit('http://localhost:3000/')
             .contains('Who Said It?')
                 .get('img')
                     .should('have.class', 'App-logo')
