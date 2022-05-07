@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import getSimpsonsData from '../../apiCalls';
+import { getSimpsonsData } from '../../apiCalls';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as heartOutline, faCircleCheck as checkedIcon } from '@fortawesome/free-regular-svg-icons';
