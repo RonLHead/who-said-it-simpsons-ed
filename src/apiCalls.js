@@ -1,5 +1,5 @@
-const getSimpsonsData = () => {
-    const fetchCall = fetch('https://thesimpsonsquoteapi.glitch.me/quotes')
+export const getSimpsonsData = () => {
+    return fetch('https://thesimpsonsquoteapi.glitch.me/quotes')
         .then(response => {
             if(response.status === 404) {
                 throw new Error('404: Not Found')
@@ -8,7 +8,4 @@ const getSimpsonsData = () => {
             }
             return response.json()
         });
-        return fetchCall;
 }
-
-export default getSimpsonsData;
