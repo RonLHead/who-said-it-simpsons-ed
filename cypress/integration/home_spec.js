@@ -1,6 +1,6 @@
 describe('Home page flow', ()=> {
     it('Should be able to visit the app and render the correct elements with loading message', () => {
-        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', { fixture: 'simpsonsQuoteTest.json'})
+        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', { fixture: 'simpsonsQuoteTest.json' })
         cy.visit('http://localhost:3000/')
             .contains('Who Said It?')
                 .get('img')
