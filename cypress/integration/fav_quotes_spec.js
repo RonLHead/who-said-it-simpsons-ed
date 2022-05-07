@@ -1,8 +1,6 @@
-import { simpsonsQuoteTest, simpsonsQuoteTest1, simpsonsQuoteTest2 } from './simpsonsQuoteData';
-
 describe('Home page flow', ()=> {
     it('Should be able to favorite a quote', () => {
-        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', simpsonsQuoteTest)
+        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', { fixture: 'mock_data_1.json' })
         cy.visit('http://localhost:3000/home')
             .get('svg')
                 .should('have.class', 'heart')
@@ -11,7 +9,7 @@ describe('Home page flow', ()=> {
                 .should('have.class', 'checked')
     })
     it('Should be able to view favorite quotes', () => {
-        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', simpsonsQuoteTest1)
+        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', { fixture: 'mock_data_2.json' })
         cy.visit('http://localhost:3000/home')
             .get('p')
                 .contains("Hey, I'm the chief here. Bake him away, toys.")
@@ -26,7 +24,7 @@ describe('Home page flow', ()=> {
                 .contains("Hey, I'm the chief here. Bake him away, toys.")
     })
     it('Should be able to delete a quote in favorite quotes list', () => {
-        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', simpsonsQuoteTest2)
+        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', { fixture: 'mock_data_3.json' })
         cy.visit('http://localhost:3000/home')
             .get('svg')
                 .should('have.class', 'heart')
@@ -48,7 +46,7 @@ describe('Home page flow', ()=> {
                 .contains('Why not go back and add some?')  
     })
     it('Should display messaging if there are no saved quotes', () => {
-        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', simpsonsQuoteTest2)
+        cy.intercept('GET', 'https://thesimpsonsquoteapi.glitch.me/quotes', { fixture: 'mock_data_3.json' })
         cy.visit('http://localhost:3000/home')
         cy.contains('Fav Quotes').click()
             .get('section')
